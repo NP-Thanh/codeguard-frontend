@@ -1,69 +1,92 @@
+/* =============================================
+   App.css — Health page + layout root
+   ============================================= */
+
+.page-layer {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Health page */
 .app {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  padding: 24px 8%;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: 700;
-  color: #2563eb;
-}
-
-.version {
-  color: #64748b;
-  font-size: 13px;
+  justify-content: center;
+  padding: 32px 16px;
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(30, 111, 168, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 70%, rgba(14, 165, 133, 0.12) 0%, transparent 60%),
+    #0d1b2a;
 }
 
 .health-card {
   width: 100%;
   max-width: 520px;
-  margin: auto;
-  padding: 48px 36px;
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 48px 40px;
   text-align: center;
-  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.06);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 24px 60px rgba(0, 0, 0, 0.45);
 }
 
-.icon {
-  font-size: 42px;
-  margin-bottom: 16px;
+.health-logo {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0d1b2a;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
 }
 
 .health-card h1 {
-  font-size: 28px;
-  margin-bottom: 12px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.welcome-message {
+  background: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  margin-bottom: 16px;
+  line-height: 1.5;
 }
 
 .description {
   color: #64748b;
+  font-size: 14px;
   line-height: 1.6;
   margin-bottom: 28px;
 }
 
 .test-button {
   width: 100%;
-  padding: 14px;
+  padding: 13px;
   border: none;
-  border-radius: 8px;
-  background: #2563eb;
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
+  border-radius: 10px;
+  background: #1a4a6b;
+  color: #ffffff;
+  font-size: 15.5px;
+  font-weight: 700;
   cursor: pointer;
+  letter-spacing: 0.2px;
+  transition: background 0.18s, transform 0.1s, box-shadow 0.18s;
+  box-shadow: 0 2px 8px rgba(26, 74, 107, 0.35);
 }
 
-.test-button:hover {
-  background: #1d4ed8;
+.test-button:hover:not(:disabled) {
+  background: #1e6fa8;
+  box-shadow: 0 4px 16px rgba(30, 111, 168, 0.4);
+  transform: translateY(-1px);
 }
 
 .test-button:disabled {
@@ -72,10 +95,12 @@
 }
 
 .result {
-  margin-top: 24px;
+  margin-top: 20px;
   padding: 16px;
-  border-radius: 8px;
+  border-radius: 10px;
+  font-size: 14px;
   line-height: 1.7;
+  text-align: left;
 }
 
 .result p {
@@ -84,35 +109,28 @@
 
 .neutral {
   color: #64748b;
+  text-align: center;
 }
 
 .success {
-  background: #ecfdf5;
-  color: #047857;
+  background: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
 }
 
 .error {
   background: #fef2f2;
   color: #b91c1c;
+  border: 1px solid #fecaca;
 }
 
-footer {
-  text-align: center;
-  color: #94a3b8;
-  font-size: 13px;
-  padding: 20px 0;
-}
-
-@media (max-width: 600px) {
-  .app {
-    padding: 20px;
-  }
-
+@media (max-width: 520px) {
   .health-card {
     padding: 32px 20px;
+    border-radius: 16px;
   }
 
   .health-card h1 {
-    font-size: 23px;
+    font-size: 20px;
   }
 }
